@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+       *{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       }
+       body{
+        background-color: aqua;
+       }
+       
+        .hello{
+            display: block;
+           margin-top: 10px;
+            margin-left: 50px;
+            text-align: center;
+           
+            padding: 15px;
+            background-color: rgba(0,0,0,0.4);
+            color: white;
+            font-weight: bold;
+        }
+       
+        input[type=text]{
+            width: 400px;
+            padding: 10px;
+            border: none;
+        }
+        input[type=text]:focus{
+            background: transparent;
+            border-bottom: 1px solid black;
+        }
+        input[type=submit],input[type=button]{
+            width: 200px;
+            padding: 10px;
+            border-bottom:2px solid blue;
+            color: white;
+            
+            border-radius: 20px;
+            cursor: pointer;
+            background: transparent;
+        }
+        a{
+            width: 200px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        
+         ul{
+          display: block;
+            
+        }
+        ul li{
+            list-style: none;
+           display: inline;
+            text-align: center 
+           
+    }
+        .calc{
+            text-align: center;
+        }
+        .percentile{
+            padding: 4px;
+            margin: 10px;
+            text-align: center;
+        }
+        .bg-image{
+            /* The image used */
+  background-image: url("static/nathan.jpg");
+position: absolute;
+/* Add the blur effect */
+filter: blur(8px);
+-webkit-filter: blur(8px);
+z-index: -2;
+/* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+        }
+        .bg-text{
+            background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+        }
+    </style>
+</head>
+<body >
+    <div class="bg-image">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi omnis culpa placeat fugiat, error quaerat, voluptate quas consequatur ducimus possimus dignissimos eum perspiciatis veritatis facilis, ipsam ex cupiditate? Incidunt, repellendus?
+    Expedita natus quidem quas consectetur ipsum blanditiis dolore exercitationem mollitia, necessitatibus labore officia quae est soluta at! Architecto nam quidem dolor, maxime dicta quas! Cumque necessitatibus eius nemo asperiores debitis?
+    Reiciendis, blanditiis in odio quia doloribus eaque iusto recusandae molestiae accusamus itaque, ullam, inventore similique adipisci architecto laborum deleniti maxime. Quis, sequi repudiandae. Impedit, quas nemo aliquid magni expedita illum?
+    Unde accusamus numquam aspernatur cum recusandae error amet aliquid? Veniam sunt dolorem fugit obcaecati, eveniet dolor eius iste incidunt minima inventore, facilis velit enim, quasi architecto. Asperiores eaque optio quis.
+    Eligendi, modi veniam. Quis adipisci mollitia, iure dolorem eos iste aliquam consectetur, aliquid animi officia ut totam impedit neque asperiores, corporis in hic nobis facere aspernatur saepe dicta exercitationem voluptatum!
+    Rerum tempore repudiandae, sint at ipsa exercitationem voluptate dolorum omnis itaque fugiat, vero molestiae ipsum? Neque sed mollitia alias corrupti harum sit, ducimus numquam consequuntur? Dolorem vitae placeat eum debitis.
+    Illo maxime quos iusto consectetur commodi eaque nulla recusandae pariatur hic ad dolore unde assumenda soluta quo autem aut error exercitationem dolores, perferendis voluptatum voluptatem ipsa necessitatibus! Commodi, perspiciatis fuga!
+    Nisi repellat, soluta culpa totam accusamus libero porro corporis asperiores at sapiente inventore nobis iste minima explicabo magnam eligendi aliquid accusantium? Distinctio harum dolorum dignissimos illo nemo, explicabo facilis minima.
+    Doloribus optio dicta, laudantium, molestias qui repellendus praesentium suscipit odio quis quasi nesciunt sequi numquam! Dolores reprehenderit fugiat eligendi quidem, eius iure atque reiciendis saepe consequatur omnis quo ipsum laborum?</div>
+    <div class="bg-text">
+    <h1 style="text-align: center;">Statistical web project in Flask frame work</h1>
+<p style="text-align: center;"> Designed mainly to solve Statistical problems in math, it automates all calculations in statistics and plottings</p>
+<div class="hello">
+    <form action="/plots" method="post">
+      
+        <label for="" style="font-size: 20px;">Enter your values X:</label>
+        <input type="text" name="x" id="x"><br><br>
+        <label for="" style="font-size: 20px;">Enter your values Y:</label>
+        <input type="text" name="y" id="y">
+        <p class="submitbtn"></p>
+        <input type="submit" value="add" onclick="setTimeout(text(),3000);">
+    </form>
+
+
+<div class="calc">
+    <h4>X axis</h4>
+    <ul>
+        {% for num in x%}
+        <li>{{num}}</li>
+        {%endfor%}
+    </ul>
+    <h4>Y axis</h4>
+    <ul>
+        {% for num2 in y%}
+        <li>{{num2}}</li>
+        {%endfor%}
+    </ul>
+    <input type="button" value="clear"></input>
+</div>
+
+   
+      
+</div>
+</div>
+<div class="calc">
+{% if plot_url %}
+<img src="data:image/png;base64,{{ plot_url }}" alt="Plot">
+{% endif %}
+</div><br>
+
+</body>
+
+</body>
+</html>

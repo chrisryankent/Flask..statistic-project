@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+       *{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       }
+       a{
+        
+        width: 200px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            margin: 5px;
+            
+       }
+       body{
+        background-color: aqua;
+       }
+       
+        .hello{
+            display: block;
+           margin-top: 10px;
+            margin-left: 50px;
+            text-align: center;
+        }
+       
+        input[type=number]{
+            width: 400px;
+            padding: 10px;
+            border: none;
+        }
+        input[type=submit]{
+            width: 200px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+         ul{
+          display: block;
+            
+        }
+        ul li{
+            list-style: none;
+           display: inline;
+            text-align: center 
+           
+    }
+        .calc{
+            text-align: center;
+        }
+        .percentile{
+            padding: 4px;
+            margin: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <a href="{{url_for('index')}}">Back home</a>
+    <h1 style="text-align: center;">Statistical web project in Flask frame work</h1> 
+<p style="text-align: center;"> Designed mainly to solve Statistical problems in math, it automates all calculations in statistics and plottings</p>
+
+      
+
+<div class="percentile">
+    <form action="/more" method="post">
+        <label for="">Percentile Value</label><br><br>
+        <input type="number" name="percent" id="percent"><br><br>
+        <input type="submit" value="submit"></input>
+    </form>
+</div>
+<div class="hello">
+ {%if percentile %}
+ <label for=""><strong>Percentile for {{percentage}}</strong> :
+    {{percentile}}
+</label>
+ {%endif%}
+</div>
+<!-- <div>
+    <form action="" method="post">
+        <label for="">upload your csv</label>
+        <input type="file" id="data" name="data">
+        <button type="submit">submit</button>
+    </form>
+</div> -->
+</body>
+<script>
+    const btn = document.querySelector(".submitbtn");
+        function text() {
+    btn.textContent="Added";   
+    }
+</script>
+</body>
+</html>
